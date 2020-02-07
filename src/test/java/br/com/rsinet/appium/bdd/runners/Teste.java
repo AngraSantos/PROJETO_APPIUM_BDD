@@ -17,7 +17,7 @@ glue = { "br.com.rsinet.hub_bdd.stepDefinition" },
 plugin = { "pretty", "com.cucumber.listener.ExtentCucumberFormatter:target/reports.html"},
 monochrome = true)
 
-public class RunnerTest {
+public class Teste {
 
 	@AfterClass
 	 public static void writeExtentReport() {

@@ -1,4 +1,4 @@
-package br.com.rsinet.appium.tdd.pageFactory;
+package br.com.rsinet.appium.bdd.ScreenFactory;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,11 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class Login {
+public class ScreenLogin {
 	
-	private AndroidDriver<WebElement> driver;
+	private AndroidDriver<MobileElement> driver;
 	private WebDriverWait wait;
 
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/linearLayoutLogin")
@@ -31,8 +32,8 @@ public class Login {
 	private WebElement btn_entrar_login;
 	
 	
-	public Login (AndroidDriver<WebElement> driver) {
-		this.driver = (AndroidDriver<WebElement>) driver;
+	public ScreenLogin (AndroidDriver<MobileElement> driver) {
+		this.driver = (AndroidDriver<MobileElement>) driver;
 		PageFactory.initElements(this.driver, this);
 		wait = new WebDriverWait(this.driver, 20);
 }

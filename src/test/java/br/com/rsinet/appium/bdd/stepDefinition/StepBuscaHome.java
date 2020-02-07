@@ -1,14 +1,42 @@
 package br.com.rsinet.appium.bdd.stepDefinition;
 
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.aventstack.extentreports.ExtentTest;
+
+import br.com.rsinet.appium.bdd.ScreenFactory.ScreenCadastro;
+import br.com.rsinet.appium.bdd.ScreenFactory.ScreenHome;
+import br.com.rsinet.appium.bdd.ScreenFactory.ScreenLogin;
+import br.com.rsinet.appium.bdd.excel.MassaDeDados;
+import br.com.rsinet.appium.bdd.utilitarios.Acoes;
+import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 
 public class StepBuscaHome {
 	
+	private AndroidDriver<MobileElement> driver;
+	private ScreenCadastro cadastro;
+	private ScreenHome telaInicial;
+	private ScreenLogin novaConta;
+	private Acoes acao;
+	
+	@Dado("^cliente esta no aplicativo da AdvantageDEMO$")
+	public void cliente_esta_no_aplicativo_da_AdvantageDEMO() throws Throwable {
+
+		telaInicial = new ScreenHome(driver);
+		cadastro = new ScreenCadastro(driver);
+		novaConta = new ScreenLogin(driver);
+		acao = new Acoes(driver);
+
+	}
+	
 	@Quando("^deve selecionar um produto na tela inicial$")
 	public void deve_selecionar_um_produto_na_tela_inicial() throws Throwable {
-
-
+		
+		
 	}
 
 	@Quando("^pode escolher um produto$")
@@ -58,6 +86,5 @@ public class StepBuscaHome {
 
 
 	}
-
-
+	
 }

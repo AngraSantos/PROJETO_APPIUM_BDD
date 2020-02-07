@@ -1,4 +1,4 @@
-package br.com.rsinet.appium.tdd.utilitarios;
+package br.com.rsinet.appium.bdd.utilitarios;
 
 import java.io.File;
 import java.io.IOException;

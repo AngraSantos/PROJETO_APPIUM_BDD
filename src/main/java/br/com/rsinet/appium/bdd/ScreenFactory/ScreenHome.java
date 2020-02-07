@@ -1,6 +1,5 @@
-package br.com.rsinet.appium.tdd.pageFactory;
+package br.com.rsinet.appium.bdd.ScreenFactory;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -8,12 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class Home {
+public class ScreenHome {
 
 	private WebDriverWait wait;
-	private AndroidDriver<WebElement> driver;
+	private AndroidDriver<MobileElement> driver;
 
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/imageViewMenu")
 	private WebElement txtbx_menu;
@@ -33,8 +33,8 @@ public class Home {
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/imageViewSearch")
 	private WebElement txtbx_clicarBuscar;
 	
-	public Home(AndroidDriver<WebElement> driver) {
-		this.driver = (AndroidDriver<WebElement>) driver;
+	public ScreenHome(AndroidDriver<MobileElement> driver) {
+		this.driver = (AndroidDriver<MobileElement>) driver;
 		PageFactory.initElements(this.driver, this);
 		wait = new WebDriverWait(this.driver, 20);
 	}

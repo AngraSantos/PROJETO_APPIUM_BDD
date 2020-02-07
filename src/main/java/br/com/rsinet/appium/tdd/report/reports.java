@@ -10,7 +10,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import br.com.rsinet.appium.tdd.utilitarios.ScreenchotUtilitarios;
+import br.com.rsinet.appium.bdd.utilitarios.ScreenchotUtilitarios;
 
 public class reports {
 

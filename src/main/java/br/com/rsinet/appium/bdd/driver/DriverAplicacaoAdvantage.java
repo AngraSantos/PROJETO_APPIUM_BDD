@@ -1,24 +1,24 @@
-package br.com.rsinet.appium.tdd.driver;
+package br.com.rsinet.appium.bdd.driver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class IniciarAplicacaoAdvantage {
+public class DriverAplicacaoAdvantage {
 
-	private static AndroidDriver<WebElement> driver;
+	private static AndroidDriver<MobileElement> driver;
 	private static DesiredCapabilities caps;
 
-	private IniciarAplicacaoAdvantage() {
+	private DriverAplicacaoAdvantage() {
 
 	}
 
-	public static  AndroidDriver<WebElement> iniciarDriver() throws MalformedURLException  {
+	public static  AndroidDriver<MobileElement> iniciarDriver() throws MalformedURLException  {
 		if (driver == null) {
 
 			caps = new DesiredCapabilities();
@@ -31,13 +31,13 @@ public class IniciarAplicacaoAdvantage {
 			caps.setCapability("unicodeKeyboard", true);
 			caps.setCapability("resetKeyboard", true);
 
-			driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
+			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
 			driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
 		}
 		return driver;
 	}
 
-	public static AndroidDriver<WebElement> FechandoJanela() {
+	public static AndroidDriver<MobileElement> FechandoJanela() {
 
 		if (driver != null)
 			driver.quit();

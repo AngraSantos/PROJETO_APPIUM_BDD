@@ -1,7 +1,6 @@
-package br.com.rsinet.appium.tdd.utilitarios;
+package br.com.rsinet.appium.bdd.utilitarios;
 
-import org.openqa.selenium.WebElement;
-
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
@@ -9,9 +8,9 @@ import io.appium.java_client.touch.offset.PointOption;
 public class Acoes {
 
 	private TouchAction touch;
-	private AndroidDriver<WebElement> driver;
+	private AndroidDriver<MobileElement> driver;
 
-	public Acoes(AndroidDriver<WebElement> driver){
+	public Acoes(AndroidDriver<MobileElement> driver){
 
 		this.driver = driver;
 		this.touch = new TouchAction (this.driver);

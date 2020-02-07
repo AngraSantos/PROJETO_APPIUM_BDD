@@ -1,4 +1,4 @@
-package br.com.rsinet.appium.tdd.excel;
+package br.com.rsinet.appium.bdd.excel;
 
 import java.io.FileInputStream;
 

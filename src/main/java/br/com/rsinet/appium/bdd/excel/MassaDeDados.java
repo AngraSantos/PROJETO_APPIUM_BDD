@@ -1,6 +1,6 @@
-package br.com.rsinet.appium.tdd.excel;
+package br.com.rsinet.appium.bdd.excel;
 
-import br.com.rsinet.appium.tdd.excel.ExcelUtilitarios;
+import br.com.rsinet.appium.bdd.excel.ExcelUtilitarios;
 
 public class MassaDeDados {
 
