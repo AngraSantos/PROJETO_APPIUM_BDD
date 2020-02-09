@@ -41,6 +41,7 @@ public class DriverAplicacaoAdvantage {
 
 		if (driver != null)
 			driver.quit();
-		 return driver = null;
+		
+		return driver = null;
 	}
 }

@@ -36,11 +36,10 @@ public class ScreenHome {
 	public ScreenHome(AndroidDriver<MobileElement> driver) {
 		this.driver = (AndroidDriver<MobileElement>) driver;
 		PageFactory.initElements(this.driver, this);
-		wait = new WebDriverWait(this.driver, 20);
+		wait = new WebDriverWait(this.driver, 120);
 	}
 
 	public void clicarMenu() throws Exception {
-//		wait.pollingEvery(Duration.ofSeconds(10));
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOf(txtbx_menu));
 		txtbx_menu.click();

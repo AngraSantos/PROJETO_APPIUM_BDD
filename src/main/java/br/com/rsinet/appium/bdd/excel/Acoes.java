@@ -1,4 +1,4 @@
-package br.com.rsinet.appium.bdd.utilitarios;
+package br.com.rsinet.appium.bdd.excel;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;

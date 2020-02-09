@@ -98,7 +98,7 @@ public class ScreenCadastro {
 		txtbx_Telefone.sendKeys(telefone);
 	}
 
-	public void pais(AndroidDriver<WebElement> driver, String pais) throws Exception {
+	public void pais(AndroidDriver<MobileElement> driver, String pais) throws Exception {
 
 		wait.until(ExpectedConditions.visibilityOf(select_Pais)).click();
 		driver.findElementByAndroidUIAutomator(
