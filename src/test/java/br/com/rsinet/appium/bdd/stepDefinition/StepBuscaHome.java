@@ -1,5 +1,6 @@
 package br.com.rsinet.appium.bdd.stepDefinition;
 
+import static br.com.rsinet.appium.bdd.driver.DriverAplicacaoAdvantage.iniciarDriver;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -31,8 +32,7 @@ public class StepBuscaHome {
 	@Dado("^que cliente esta no aplicativo da AdvantageDEMO$")
 	public void que_cliente_esta_no_aplicativo_da_AdvantageDEMO() throws Throwable {
 
-		driver = DriverAplicacaoAdvantage.iniciarDriver();
-
+		driver = iniciarDriver();
 	
 		produto = new ScreenProduto(driver);
 		wait = new WebDriverWait(driver, 20);
@@ -45,11 +45,15 @@ public class StepBuscaHome {
 
 		telaInicial.clicarTablet();
 	}
+	
+	@Quando("^clica no produto$")
+	public void clica_no_produto() throws Throwable {
+
+		produto.tabletEliteX2();
+	}
 
 	@Quando("^ao selecionar um produto ira aparecer o que foi escolhido$")
 	public void ao_selecionar_um_produto_ira_aparecer_o_que_foi_escolhido() throws Throwable {
-
-		produto.tabletEliteX2();
 
 		WebElement element = driver.findElement(By.xpath(
 				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.TextView"));
@@ -58,15 +62,26 @@ public class StepBuscaHome {
 
 	}
 
-	@Quando("^fazer o login$")
-	public void fizer_o_login() throws Throwable {
-
+	@Dado("^clicar no botao do menu$")
+	public void clicar_no_botao_do_menu() throws Throwable {
+		
 		telaInicial.clicarMenu();
+	}
+	
+	@Quando("^clicar no botao do Login$")
+	public void clicar_no_botao_do_Login() throws Throwable {
+		
 		login.clicarLogin();
 		
-//		login.incluirUsuario(massa.usuario());
-//		login.incluirSenha(massa.senha());
-//		login.apertarBotaoEntrarLogin();
+	}
+	
+	@Quando("^fazer o login \"([^\"]*)\" , \"([^\"]*)\"$")
+	public void fazer_o_login(String username, String senha) throws Throwable {
+
+		login.incluirUsuario(username);		
+		login.incluirSenha(senha);
+		
+		login.apertarBotaoEntrarLogin();
 
 	}
 
@@ -80,7 +95,6 @@ public class StepBuscaHome {
 	public void escolher_o_produto() throws Throwable {
 
 		produto.tabletEliteX2();
-
 	}
 
 	@Quando("^escolher a quantidade$")
@@ -95,12 +109,12 @@ public class StepBuscaHome {
 	public void incluir_no_carrinho() throws Throwable {
 
 		produto.incluirCarrinho();
+		produto.clicarCarrinho();
 	}
 
 	@Entao("^tera uma quantidade divergente do solicitado$")
 	public void tera_uma_quantidade_divergente_do_solicitado() throws Throwable {
 
-		produto.clicarCarrinho();
 		assertTrue(driver.getPageSource().contains("10"));
 
 	}
@@ -110,4 +124,12 @@ public class StepBuscaHome {
 		
 		driver = DriverAplicacaoAdvantage.FechandoJanela();
 	}
+	
+	
+	@Entao("^ira aparecer o produto que foi escolhido$")
+	public void ira_aparecer_o_produto_que_foi_escolhido() throws Throwable {
+
+
+	}	
+
 }

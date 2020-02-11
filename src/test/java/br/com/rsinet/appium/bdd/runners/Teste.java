@@ -10,12 +10,12 @@ import cucumber.api.junit.Cucumber;
 (features = "src/test/resources/TesteFuncional", 
 glue = {"br.com.rsinet.appium.bdd.stepDefinition" }, 
 tags = {
-		"@CadastroComSucesso ,"
-		+ " @SenhaDigitadaIncorretamente"},
-//		"@BuscaPelaLupaComSucesso",
-//		"@BuscaPelaLupaComFalhaPorProdutoInexistente", 
-//		"@BuscaDeProdutoComSucesso",
-//		"@BuscaDeProdutoComFalhaPorQuantidadeNoCarrinhoDivergente"},
+		"@CadastroComSucesso " },
+//		+ " @SenhaDigitadaIncorretamente"},
+//		"@BuscaPelaLupaComSucesso, "
+//		+ "@FalhaPorProdutoInexistente" },
+//		"@BuscaDeProdutoComSucesso,"
+//		+ "@FalhaPorQuantidadeNoCarrinhoDivergente"},
 //plugin = { "pretty", "com.cucumber.listener.ExtentCucumberFormatter:target/reports.html"},
 		monochrome = true)
 

@@ -1,13 +1,15 @@
-package br.com.rsinet.appium.bdd.excel;
+package br.com.rsinet.appium.bdd.utilitarios;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class movimentoTela {
 
 	private TouchAction touch;
-	private AndroidDriver<MobileElement> driver;
+	private static AndroidDriver<MobileElement> driver;
 
 	public movimentoTela(AndroidDriver<MobileElement> driver){
 
@@ -24,4 +26,10 @@ public class movimentoTela {
 		
 	}	
 
+	public static AndroidDriver<MobileElement> scrollTempoInicial () {
+		(new TouchAction((PerformsTouchActions) driver)).press(PointOption.point(1055, 378))
+		.moveTo(PointOption.point(1059, 1744)).release().perform();
+		
+		return driver;
+	}
 }

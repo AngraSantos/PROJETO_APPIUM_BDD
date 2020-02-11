@@ -1,7 +1,5 @@
 package br.com.rsinet.appium.bdd.ScreenFactory;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -16,6 +14,7 @@ public class ScreenHome {
 
 	private WebDriverWait wait;
 	private AndroidDriver<MobileElement> driver;
+	
 
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/imageViewMenu")
 	private WebElement txtbx_menu;
@@ -42,7 +41,6 @@ public class ScreenHome {
 	}
 
 	public void clicarMenu() throws Exception {
-		wait.pollingEvery(Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.visibilityOf(txtbx_menu));
 		txtbx_menu.click();
 	}

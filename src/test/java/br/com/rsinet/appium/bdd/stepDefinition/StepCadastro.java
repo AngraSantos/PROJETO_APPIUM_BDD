@@ -1,6 +1,7 @@
 package br.com.rsinet.appium.bdd.stepDefinition;
 
 import static br.com.rsinet.appium.bdd.driver.DriverAplicacaoAdvantage.FechandoJanela;
+import static br.com.rsinet.appium.bdd.driver.DriverAplicacaoAdvantage.iniciarDriver;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -12,8 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenCadastro;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenHome;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenLogin;
-import br.com.rsinet.appium.bdd.driver.DriverAplicacaoAdvantage;
-import br.com.rsinet.appium.bdd.excel.movimentoTela;
+import br.com.rsinet.appium.bdd.utilitarios.movimentoTela;
 import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
@@ -33,7 +33,7 @@ public class StepCadastro {
 	@Dado("^que cliente esteja no aplicativo$")
 	public void que_cliente_esteja_no_aplicativo() throws Throwable {
 
-		driver = DriverAplicacaoAdvantage.iniciarDriver();
+		driver = iniciarDriver();
 
 		cadastro = new ScreenCadastro(driver);
 		acao = new movimentoTela(driver);
@@ -87,16 +87,21 @@ public class StepCadastro {
 
 		cadastro.Registrar();
 	}
-
 	
-	@Entao("^o cadastro estara efetuado com sucesso \"([^\"]*)\"$")
-	public void o_cadastro_estara_efetuado_com_sucesso(String username) throws Throwable {
+	@Quando("^clica no menu$")
+	public void clica_no_menu() throws Throwable {
 
+		movimentoTela.scrollTempoInicial();
 		telaInicial.clicarMenu();
+		
+	}
+
+	@Entao("^o cadastro estara efetuado com sucesso \"([^\"]*)\"$")
+	public void o_cadastro_estara_efetuado_com_sucesso(String usuario) throws Throwable {
 
 		WebElement element = driver.findElement(By.id("com.Advantage.aShopping:id/textViewMenuUser"));
-		wait.until(ExpectedConditions.visibilityOf(element));
-		assertEquals(element.getText(), username);
+        wait.until(ExpectedConditions.visibilityOf(element));
+        assertEquals(element.getText(), usuario);
 
 	}
 
@@ -122,12 +127,13 @@ public class StepCadastro {
 		cadastro.cidade(cidade);
 		cadastro.cartaoPostal(cartaoPostal);
 
+		acao.scroll("ACCOUNT DETAILS");
+
 	}
 
 	@Entao("^ao preencher ira aparecer que foi preenchido o senha de forma errada$")
 	public void ao_preencher_ira_aparecer_que_foi_preenchido_o_senha_de_forma_errada ()throws Throwable {
 	 
-		acao.scroll("ACCOUNT DETAILS");
 		assertTrue(driver.getPageSource().contains("1 upper letter required"));
 
 	}

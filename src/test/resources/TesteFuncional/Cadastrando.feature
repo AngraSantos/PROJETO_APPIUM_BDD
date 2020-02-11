@@ -12,11 +12,12 @@ E em seguida clica em criar novo usuario
 Esquema do Cenario:
 Quando preencher o cadastro "<Username>", "<email>" , "<senha>" , "<ConfirmarSenha>" , "<primeiroNome>" , "<ultimoNome>" , "<telefone>" , "<Pais>" , "<estado>" , "<endereco>" , "<cidade>" , "<CEP>"" 
 E clicar no botao de registrar
+E clica no menu
 Entao o cadastro estara efetuado com sucesso "<Username>"
 
 Exemplos:
-	| Username 	  	 | email                       | senha    | ConfirmarSenha | primeiroNome | ultimoNome | telefone       | Pais   | estado    | endereco             | cidade    | CEP       |
-	| Angrhugyut | angra.santos@hotmail.com.br | Angra123 | Angra123       | Angra			  | Santos     | (11)97051-0060 | Brazil | Sao Paulo | Rua Tres Marias, 123 | Sao Paulo | 01010-200 |
+	| Username 	 | email                       | senha    | ConfirmarSenha | primeiroNome | ultimoNome | telefone       | Pais   | estado    | endereco             | cidade    | CEP       |
+	| hsvhbdj  | angra.santos@hotmail.com.br | Angra123 | Angra123       | Angra			  | Santos     | (11)97051-0060 | Brazil | Sao Paulo | Rua Tres Marias, 123 | Sao Paulo | 01010-200 |
 
 @SenhaDigitadaIncorretamente
 Esquema do Cenario:
