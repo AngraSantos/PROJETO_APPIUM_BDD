@@ -14,8 +14,6 @@ public class ScreenCadastro {
 
 	private AndroidDriver<MobileElement> driver;
 	private WebDriverWait wait;
-//	private WebDriver driver;
-
 
 	@FindBy(how = How.XPATH, using = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextUserName']/child::*[1]")
 	private WebElement txtbx_username;

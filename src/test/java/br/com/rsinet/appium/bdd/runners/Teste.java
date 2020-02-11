@@ -8,10 +8,16 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions
 (features = "src/test/resources/TesteFuncional", 
-glue = {"br.com.rsinet.appium.bdd.stepDefinition"},
-//tags = {"@CadastroComSucesso"},
+glue = {"br.com.rsinet.appium.bdd.stepDefinition" }, 
+tags = {
+		"@CadastroComSucesso ,"
+		+ " @SenhaDigitadaIncorretamente"},
+//		"@BuscaPelaLupaComSucesso",
+//		"@BuscaPelaLupaComFalhaPorProdutoInexistente", 
+//		"@BuscaDeProdutoComSucesso",
+//		"@BuscaDeProdutoComFalhaPorQuantidadeNoCarrinhoDivergente"},
 //plugin = { "pretty", "com.cucumber.listener.ExtentCucumberFormatter:target/reports.html"},
-monochrome = true)
+		monochrome = true)
 
 public class Teste {
 

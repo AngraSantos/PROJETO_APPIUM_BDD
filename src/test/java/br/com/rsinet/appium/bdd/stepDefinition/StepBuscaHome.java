@@ -12,7 +12,6 @@ import br.com.rsinet.appium.bdd.ScreenFactory.ScreenHome;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenLogin;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenProduto;
 import br.com.rsinet.appium.bdd.driver.DriverAplicacaoAdvantage;
-import br.com.rsinet.appium.bdd.excel.MassaDeDados;
 import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
@@ -24,7 +23,7 @@ public class StepBuscaHome {
 
 	private AndroidDriver<MobileElement> driver;
 	private ScreenProduto produto;
-	private MassaDeDados massa;
+
 	private ScreenHome telaInicial;
 	private WebDriverWait wait;
 	private ScreenLogin login;
@@ -34,7 +33,7 @@ public class StepBuscaHome {
 
 		driver = DriverAplicacaoAdvantage.iniciarDriver();
 
-		massa = new MassaDeDados();
+	
 		produto = new ScreenProduto(driver);
 		wait = new WebDriverWait(driver, 20);
 		telaInicial = new ScreenHome(driver);
@@ -65,9 +64,9 @@ public class StepBuscaHome {
 		telaInicial.clicarMenu();
 		login.clicarLogin();
 		
-		login.incluirUsuario(massa.usuario());
-		login.incluirSenha(massa.senha());
-		login.apertarBotaoEntrarLogin();
+//		login.incluirUsuario(massa.usuario());
+//		login.incluirSenha(massa.senha());
+//		login.apertarBotaoEntrarLogin();
 
 	}
 
