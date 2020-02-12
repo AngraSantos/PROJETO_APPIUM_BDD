@@ -1,6 +1,5 @@
 package br.com.rsinet.appium.bdd.stepDefinition;
 
-import static br.com.rsinet.appium.bdd.driver.DriverAplicacaoAdvantage.FechandoJanela;
 import static br.com.rsinet.appium.bdd.driver.DriverAplicacaoAdvantage.iniciarDriver;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -14,7 +13,6 @@ import br.com.rsinet.appium.bdd.ScreenFactory.ScreenCadastro;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenHome;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenLogin;
 import br.com.rsinet.appium.bdd.utilitarios.movimentoTela;
-import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
@@ -136,11 +134,5 @@ public class StepCadastro {
 	 
 		assertTrue(driver.getPageSource().contains("1 upper letter required"));
 
-	}
-
-	@After
-	public void finalizando() {
-
-		driver = FechandoJanela();
 	}
 }

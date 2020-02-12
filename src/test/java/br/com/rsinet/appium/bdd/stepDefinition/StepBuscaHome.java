@@ -12,8 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenHome;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenLogin;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenProduto;
-import br.com.rsinet.appium.bdd.driver.DriverAplicacaoAdvantage;
-import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
@@ -52,8 +50,8 @@ public class StepBuscaHome {
 		produto.tabletEliteX2();
 	}
 
-	@Quando("^ao selecionar um produto ira aparecer o que foi escolhido$")
-	public void ao_selecionar_um_produto_ira_aparecer_o_que_foi_escolhido() throws Throwable {
+	@Entao("^ira aparecer o produto que foi escolhido$")
+	public void ira_aparecer_o_produto_que_foi_escolhido() throws Throwable {
 
 		WebElement element = driver.findElement(By.xpath(
 				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.TextView"));
@@ -118,18 +116,4 @@ public class StepBuscaHome {
 		assertTrue(driver.getPageSource().contains("10"));
 
 	}
-	
-	@After
-	public void finalizando () {
-		
-		driver = DriverAplicacaoAdvantage.FechandoJanela();
-	}
-	
-	
-	@Entao("^ira aparecer o produto que foi escolhido$")
-	public void ira_aparecer_o_produto_que_foi_escolhido() throws Throwable {
-
-
-	}	
-
 }

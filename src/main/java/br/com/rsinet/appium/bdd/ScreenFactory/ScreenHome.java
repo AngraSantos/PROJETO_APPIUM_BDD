@@ -40,7 +40,7 @@ public class ScreenHome {
 		wait = new WebDriverWait(this.driver, 20);
 	}
 
-	public void clicarMenu() throws Exception {
+	public void clicarMenu() {
 		wait.until(ExpectedConditions.visibilityOf(txtbx_menu));
 		txtbx_menu.click();
 	}
