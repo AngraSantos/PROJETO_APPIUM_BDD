@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenCadastro;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenHome;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenLogin;
-import br.com.rsinet.appium.bdd.utilitarios.movimentoTela;
+import br.com.rsinet.appium.bdd.utilitarios.RolagemTela;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
@@ -25,7 +25,7 @@ public class StepCadastro {
 	private ScreenHome telaInicial;
 	private ScreenLogin login;
 	private ScreenCadastro cadastro;
-	private movimentoTela acao;
+	private RolagemTela rolagem;
 	private WebDriverWait wait;
 
 	@Dado("^que cliente esteja no aplicativo$")
@@ -34,7 +34,7 @@ public class StepCadastro {
 		driver = iniciarDriver();
 
 		cadastro = new ScreenCadastro(driver);
-		acao = new movimentoTela(driver);
+		rolagem = new RolagemTela(driver);
 		wait = new WebDriverWait(driver, 20);
 		telaInicial = new ScreenHome(driver);
 		login = new ScreenLogin(driver);
@@ -70,7 +70,7 @@ public class StepCadastro {
 		cadastro.ultimoNome(ultimoNome);
 		cadastro.telefone(telefone);
 
-		acao.scroll("ADDRESS");
+		rolagem.scroll("ADDRESS");
 
 		cadastro.pais(driver, pais);
 		cadastro.estado(estado);
@@ -89,7 +89,7 @@ public class StepCadastro {
 	@Quando("^clica no menu$")
 	public void clica_no_menu() throws Throwable {
 
-		movimentoTela.scrollTempoInicial();
+		RolagemTela.scrollTempoInicialparaMenu();
 		telaInicial.clicarMenu();
 		
 	}
@@ -117,7 +117,7 @@ public class StepCadastro {
 		cadastro.ultimoNome(ultimoNome);
 		cadastro.telefone(telefone);
 
-		acao.scroll("ADDRESS");
+		rolagem.scroll("ADDRESS");
 
 		cadastro.pais(driver, pais);
 		cadastro.estado(estado);
@@ -125,7 +125,7 @@ public class StepCadastro {
 		cadastro.cidade(cidade);
 		cadastro.cartaoPostal(cartaoPostal);
 
-		acao.scroll("ACCOUNT DETAILS");
+		rolagem.scroll("ACCOUNT DETAILS");
 
 	}
 

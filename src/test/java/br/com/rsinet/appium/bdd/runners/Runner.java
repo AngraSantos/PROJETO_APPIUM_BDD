@@ -26,7 +26,7 @@ plugin = { "pretty", "com.cucumber.listener.ExtentCucumberFormatter:target/repor
 		monochrome = true
 		)
 
-public class Teste {
+public class Runner {
 
 	@AfterClass
 	 public static void writeExtentReport() {

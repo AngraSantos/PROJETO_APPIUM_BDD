@@ -37,7 +37,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 			File sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-			String destinationPath = System.getProperty("user.dir") + "/target/report/" + screenShotNome + time()
+			String destinationPath = System.getProperty("user.dir") + "/target/screenchot/" + screenShotNome + time()
 					+ ".png";
 			try {
 				FileUtils.copyFile(sourcePath, new File(destinationPath));

@@ -16,8 +16,8 @@ E clica no menu
 Entao o cadastro estara efetuado com sucesso "<Username>"
 
 Exemplos:
-	| Username 	 | email                       | senha    | ConfirmarSenha | primeiroNome | ultimoNome | telefone       | Pais   | estado    | endereco             | cidade    | CEP       |
-	| jghhfdddd  | angra.santos@hotmail.com.br | Angra123 | Angra123       | Angra			  | Santos     | (11)97051-0060 | Brazil | Sao Paulo | Rua Tres Marias, 123 | Sao Paulo | 01010-200 |
+	| Username   	 | email                       | senha    | ConfirmarSenha | primeiroNome | ultimoNome | telefone       | Pais   | estado    | endereco             | cidade    | CEP       |
+	| MarianaOliv  | angra.santos@hotmail.com.br | Angra123 | Angra123       | Angra			  | Santos     | (11)97051-0060 | Brazil | Sao Paulo | Rua Tres Marias, 123 | Sao Paulo | 01010-200 |
 
 @SenhaDigitadaIncorretamente
 Esquema do Cenario:

@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenHome;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenLogin;
 import br.com.rsinet.appium.bdd.ScreenFactory.ScreenProduto;
+import br.com.rsinet.appium.bdd.utilitarios.RolagemTela;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
@@ -22,10 +23,10 @@ public class StepBuscaHome {
 
 	private AndroidDriver<MobileElement> driver;
 	private ScreenProduto produto;
-
 	private ScreenHome telaInicial;
 	private WebDriverWait wait;
 	private ScreenLogin login;
+	private RolagemTela rolagem;
 
 	@Dado("^que cliente esta no aplicativo da AdvantageDEMO$")
 	public void que_cliente_esta_no_aplicativo_da_AdvantageDEMO() throws Throwable {
@@ -36,27 +37,27 @@ public class StepBuscaHome {
 		wait = new WebDriverWait(driver, 20);
 		telaInicial = new ScreenHome(driver);
 		login = new ScreenLogin(driver);
+		rolagem = new RolagemTela(driver);
 	}
 
 	@Quando("^selecionar uma categoria na tela inicial$")
 	public void selecionar_uma_categoria_na_tela_inicial() throws Throwable {
 
-		telaInicial.clicarTablet();
+		rolagem.scroll("Mice");
 	}
 	
 	@Quando("^clica no produto$")
 	public void clica_no_produto() throws Throwable {
 
-		produto.tabletEliteX2();
+		rolagem.scroll("MICROSOFT SCULPT TOUCH MOUSE");
 	}
 
 	@Entao("^ira aparecer o produto que foi escolhido$")
 	public void ira_aparecer_o_produto_que_foi_escolhido() throws Throwable {
 
-		WebElement element = driver.findElement(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.TextView"));
+		WebElement element = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.TextView"));
 		wait.until(ExpectedConditions.visibilityOf(element));
-		assertEquals(element.getText(), "HP ELITE X2 1011 G1 TABLET");
+		assertEquals(element.getText(), "MICROSOFT SCULPT TOUCH MOUSE");
 
 	}
 
@@ -86,13 +87,13 @@ public class StepBuscaHome {
 	@Quando("^selecionar o categoria de produto desejado$")
 	public void selecionar_o_categoria_de_produto_desejado() throws Throwable {
 
-		telaInicial.clicarTablet();
+		telaInicial.clicarHeadphones();
 	}
 
 	@Quando("^escolher o produto$")
 	public void escolher_o_produto() throws Throwable {
 
-		produto.tabletEliteX2();
+		produto.FoneLogitech();
 	}
 
 	@Quando("^escolher a quantidade$")

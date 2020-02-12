@@ -26,4 +26,4 @@ Entao tera uma quantidade divergente do solicitado
 Exemplos: 
 
 	| username    |	senha   	|
-	| usfuhuuyg   | Angra123  |
+	| Angra123    | Angra123  |
